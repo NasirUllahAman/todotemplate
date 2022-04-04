@@ -11,11 +11,11 @@ type TaskAPI interface {
 	GetTodoByIDAPI(id int64) (*models.TodoReponse, error)
 }
 type TaskAPIImpl struct {
-	db *db.TaskDBImpl
+	db *db.TodoDBImpl
 }
 
 func NewTaskAPIImpl() *TaskAPIImpl {
-	dbImpl := db.NewTaskDBImpl()
+	dbImpl := db.NewTodoDBImpl()
 	return &TaskAPIImpl{
 		db: dbImpl,
 	}

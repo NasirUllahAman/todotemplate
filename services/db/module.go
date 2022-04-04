@@ -14,20 +14,20 @@ type TaskDB interface {
 	GetAllTodoDB() ([]*models.TodoReponse, error)
 }
 
-type TaskDBImpl struct {
+type TodoDBImpl struct {
 	dbConn *sqlx.DB
 }
 
-func NewTaskDBImpl() *TaskDBImpl {
+func NewTodoDBImpl() *TodoDBImpl {
 	dbConn, err := sqlx.Connect("mysql", "root:Nasir@12345@tcp(127.0.0.1:3306)/abcDB")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
 		fmt.Println("db is connected")
 	}
-	return &TaskDBImpl{
+	return &TodoDBImpl{
 		dbConn: dbConn,
 	}
 }
 
-var _ TaskDB = &TaskDBImpl{}
+var _ TaskDB = &TodoDBImpl{}
