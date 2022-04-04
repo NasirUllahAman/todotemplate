@@ -1,7 +1,7 @@
 package main
 
 import (
-	"todoapplication/service/server"
+	"todoapplication/services/server"
 
 	"github.com/labstack/echo/v4"
 )
