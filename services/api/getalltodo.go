@@ -5,8 +5,9 @@ import (
 	api_errors "todoapplication/services/api/errors"
 )
 
-func (api *TaskAPIImpl) CreateTodoAPI(tododata *models.Todo) (*models.TodoReponse, error) {
-	todoresp, err := api.db.CreateTodoDB(tododata)
+func (api *TaskAPIImpl) GetAllTodoAPI() ([]*models.TodoReponse, error) {
+
+	todoresp, err := api.db.GetAllTodoDB()
 	if err != nil {
 		return nil, api_errors.NewInternalServerError(err.Error())
 	}
